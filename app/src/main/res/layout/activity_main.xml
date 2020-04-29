@@ -1,0 +1,39 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <WebView
+        android:id="@+id/wv_webview"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+    </WebView>
+
+    <!--加载提示的loading图-->
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/loading_anim"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+    <!-- 二维码,条码扫描 -->
+    <LinearLayout
+        android:id="@+id/scan_fragment"
+        android:orientation="vertical"
+        android:layout_width="1px"
+        android:layout_height="1px"
+        />
+
+
+
+<!--    <Button-->
+<!--        android:id="@+id/button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"/>-->
+
+</RelativeLayout>
