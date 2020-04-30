@@ -61,12 +61,12 @@ public class MainActivity extends AppCompatActivity {
         initWebView(webView);
 
         //访问网页
-        webView.loadUrl("http://www.baidu.com");
+        //webView.loadUrl("http://www.baidu.com");
         //webView.loadUrl("file:///android_asset/html/loading.html");
-        //webView.loadUrl("http://172.16.88.19:8001/");
+        webView.loadUrl("http://192.168.1.107:8001");
 
         //启动视频
-        initQRcodeScan();
+        //initQRcodeScan();
     }
 
 
@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
             public void onProgressChanged(WebView view, int newProgress) {
                 Log.i(TAG, "onProgressChanged:----------->" + newProgress);
                 if (newProgress == 100) {
-                    //loadingLayout.setVisibility(View.GONE);
+                    loadingLayout.setVisibility(View.GONE);
 
                 }
             }
@@ -238,12 +238,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        scanFragment.onPause();
+        if(scanFragment!=null){
+            scanFragment.onPause();
+        }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        scanFragment.onResume();
+        if(scanFragment!=null){
+            scanFragment.onResume();
+        }
     }
 }
