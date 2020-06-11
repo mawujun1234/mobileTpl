@@ -31,7 +31,30 @@ import java.net.SocketException;
 import java.util.Enumeration;
 import java.util.List;
 
-
+/**
+ * 使用方法：
+ * 	String uuid = PropsUtil.get("pinkitec.mes.device.uuid.type");
+ * 		String deviceCode = null;
+ * 		if("wifi".equals(uuid)){
+ * 			//无线网卡地址
+ * 			deviceCode = SystemUtil.getWifiMacAddress();
+ *                }else if("eth0".equals(uuid)){
+ * 			//有线网卡地址
+ * 			deviceCode = SystemUtil.getEth0MacAddress();
+ *        }else if("cpu".equals(uuid)){
+ * 			//cpu的号码
+ * 			deviceCode = SystemUtil.getCpuAddress();
+ *        }else if("imei".equals(uuid)){
+ * 			//imei号码
+ * 			deviceCode = SystemUtil.getImei();
+ *        }else if("random".equals(uuid)){
+ * 			//imei号码
+ * 			deviceCode = SystemUtil.getRandomSn(context);
+ *        }else{
+ * 			//设备号
+ * 			deviceCode = SystemUtil.getSerialNumble();
+ *        }
+ */
 public class SystemUtil {
 
 	//上下文
